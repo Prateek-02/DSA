@@ -10,6 +10,8 @@ void findDuplicate(int arr[],int n){
     for(int i=1;i<n;i++){
         ans = ans^i;
     }
+
+    cout<<ans;
 }
 
 int main(){
