@@ -5,14 +5,18 @@ void sortOne(int arr[],int n){
     int s = 0;
     int e = n-1;
 
-    while(s<=e){
-        if(arr[s] == 0 && arr[e] == 1){
+    while(s<e){
+        // Move the start pointer forward if the element is 0
+        while (s < e && arr[s] == 0) {
             s++;
+        }
+        // Move the end pointer backward if the element is 1
+        while (s < e && arr[e] == 1) {
             e--;
         }
-
-        else if(arr[s] == 1 && arr[e] == 0){
-            swap(arr[s],arr[e]);
+        // If arr[s] is 1 and arr[e] is 0, swap them
+        if (s < e) {
+            swap(arr[s], arr[e]);
             s++;
             e--;
         }
@@ -23,6 +27,7 @@ void printArray(int arr[], int n){
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
+    cout<<endl;
 }
 
 int main(){
@@ -38,8 +43,5 @@ int main(){
 
     sortOne(arr,size);
     printArray(arr,size);
-
-    
-
     
 }
