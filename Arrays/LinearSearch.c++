@@ -1,11 +1,11 @@
 #include<iostream>
 using namespace std;
 
-bool search(int arr[],int n, int key){
+int search(int arr[],int n, int key){
 
     for(int i=0;i<n;i++){
         if(arr[i] == key){
-            return 1;
+            return i;
         }
     }
     return 0;
@@ -27,13 +27,18 @@ int main(){
     cout<<"Enter key to search: ";
     cin>>key;
 
-    bool found = search(arr,size,key);
+    int found = search(arr,size,key);
 
+    // if(found){
+    //     cout<<"Key is present"<<endl;
+    // }
+    // else{
+    //     cout<<"Key is absent"<<endl;
+    // }
     if(found){
-        cout<<"Key is present"<<endl;
+        cout<< "Key found at index: "<<found;   
     }
     else{
-        cout<<"Key is absent"<<endl;
+        cout<<"Key not found";
     }
-
 }
