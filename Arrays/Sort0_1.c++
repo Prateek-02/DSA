@@ -5,18 +5,15 @@ void sortOne(int arr[],int n){
     int s = 0;
     int e = n-1;
 
-    while(s<e){
-        // Move the start pointer forward if the element is 0
-        while (s < e && arr[s] == 0) {
+    while(s<=e){
+        if(arr[s] == 0){
             s++;
         }
-        // Move the end pointer backward if the element is 1
-        while (s < e && arr[e] == 1) {
+        else if(arr[e] == 1){
             e--;
         }
-        // If arr[s] is 1 and arr[e] is 0, swap them
-        if (s < e) {
-            swap(arr[s], arr[e]);
+        else{
+            swap(arr[s],arr[e]);
             s++;
             e--;
         }
