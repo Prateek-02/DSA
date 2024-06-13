@@ -60,7 +60,7 @@ int main(){
     cout<<"Enter key: ";
     cin>>key;
 
-    cout<<"First occurance of "<<key <<" is at index "<<firstOccr(arr,size,key)<<endl;
-    cout<<"Last occurance of "<<key <<" is at index "<<lastOccr(arr,size,key);
+    cout<<"First occurence of "<<key <<" is at index "<<firstOccr(arr,size,key)<<endl;
+    cout<<"Last occurence of "<<key <<" is at index "<<lastOccr(arr,size,key);
 
 }
