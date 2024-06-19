@@ -18,8 +18,7 @@ int main(){
                 min = j;
             }
         }
-        // swap(arr[i],arr[min]);
-        swap(arr[min],arr[i]);
+        swap(arr[i],arr[min]);
     }
 
     cout<<"Sorted array: ";
