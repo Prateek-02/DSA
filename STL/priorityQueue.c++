@@ -32,4 +32,7 @@ int main(){
         cout<<mini.top()<<" ";
         mini.pop();
     }
+    cout<<endl;
+
+    cout<<"Khali h ky bhai?? -> "<<mini.empty()<<endl;
 }
