@@ -3,7 +3,7 @@
 using namespace std;
 
 vector<int> reverse(vector<int> v,int m){
-    int s = m;
+    int s = m+1;
     int e = v.size()-1;
 
     while(s<=e){
@@ -31,7 +31,7 @@ int main(){
     v.push_back(4);
 
     int m;
-    cout<<"Enter position to reverse from: ";
+    cout<<"Enter position after which reverse happens: ";
     cin>>m;
 
 
