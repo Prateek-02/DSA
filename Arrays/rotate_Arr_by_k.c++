@@ -12,7 +12,7 @@ int main(){
     }
 
     int k;
-    cout<<"Enter position from where array is to be rotated: ";
+    cout<<"Enter index from where array is to be rotated: ";
     cin>>k;
 
     int arr2[100];
