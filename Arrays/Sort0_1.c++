@@ -2,11 +2,11 @@
 using namespace std;
 
 void sortOne(int arr[],int n){
-    int st = 0;
+    int s = 0;
     int e = n-1;
 
     while(s<=e){
-        if(arr[st] == 0){
+        if(arr[s] == 0){
             s++;
         }
         else if(arr[e] == 1){
