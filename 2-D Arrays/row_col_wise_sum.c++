@@ -24,6 +24,26 @@ void printSumCol(int arr[][4],int row,int col){
     }
 }
 
+// largest row sum
+int largestRowSum(int arr[][4], int row, int col){
+    int maxi = INT32_MIN;
+    int rowIndex = -1;
+    for(int row=0;row<3;row++){
+        int sum = 0;
+        for(int col=0;col<4;col++){
+            sum += arr[row][col];
+        }
+        
+        if(sum > maxi){
+            maxi = sum;
+            rowIndex = row;
+        }
+    }
+
+    cout<<"The maximum sum is: "<<maxi<<endl;
+    return rowIndex;
+}
+
 int main(){
     int arr[3][4];
 
@@ -44,5 +64,8 @@ int main(){
 
     printSumRow(arr,3,4);
     printSumCol(arr,3,4);
+
+    int ansIndex = largestRowSum(arr,3,4);
+    cout<<"Max row is at index: "<<ansIndex<<endl;
 
 }
