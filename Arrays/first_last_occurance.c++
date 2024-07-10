@@ -12,7 +12,7 @@ int firstOccr(int arr[],int n,int key){
             ans = mid;
             e = mid-1;
         }
-        // got to right part
+        // go to right part
         else if(arr[mid] < key){
             s = mid+1;
         }
