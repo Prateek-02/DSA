@@ -43,7 +43,7 @@ int main(){
     int ans = 2;
     int pd = arr[1] - arr[0];
     int i=2; 
-    int currLen = 0;
+    int currLen = 2;
 
     while(i<n){
         if(pd == arr[i]-arr[i-1]){
