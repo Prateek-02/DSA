@@ -62,3 +62,30 @@ int main(){
 
 
 // Record Breaker
+
+int main(){
+    int n;
+    cout<<"Enter no. of days: ";
+    cin>>n;
+
+    int arr[100];
+    cout<<"Enter no. of people in each day: "<<endl;
+    for (int i = 0; i < n; i++){
+        cin>>arr[i];
+    }
+    
+    if(n==1){
+        cout<<"1"<<endl;
+        return 0;
+    }
+    
+    int ans = 0;
+    int mx = -1;
+    for(int i=0;i<n;i++){
+        if(arr[i] > mx && arr[i] > arr[i+1]) {
+            ans++;
+        }
+        mx = max(mx,arr[i]);
+    }
+    cout<<ans<<endl;  
+}
