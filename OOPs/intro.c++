@@ -12,7 +12,7 @@ class Hero{
 
     //default constructor
     Hero(){
-        cout<<"Constructor Called"<<endl;
+        cout<<"Default Constructor Called"<<endl;
     }
 
     //Parameterized construtor
@@ -20,6 +20,13 @@ class Hero{
         // cout<<"this-> "<<this<<endl;
         this->health = health;
         this->level = level;
+    }
+
+    //copy constructor
+    Hero(Hero& temp){
+        cout<<"Copy Constructor called"<<endl;
+        this->health = temp.health;
+        this->level = temp.level;
     }
 
     void print(){
@@ -47,6 +54,17 @@ class Hero{
 
 int main(){
 
+    Hero S(70,'C');
+    S.print();
+
+    //Copy constructor
+    Hero R(S);
+    R.print();
+
+
+
+/*
+    // Parameterized constructor
     // object created statically
     Hero ramesh(10,'A');
     // cout<<"Address of ramesh: "<<&ramesh<<endl;
@@ -57,14 +75,10 @@ int main(){
     Hero *h = new Hero(20,'B');
     h->print();
 
+*/
 
 
-
-
-
-
-
-    /*
+/*
     // Static allocation
     Hero a;
     a.setHealth(80);
@@ -81,10 +95,11 @@ int main(){
     //or
     cout<<"Level: "<<b->level<<endl;
     cout<<"Health: "<<b->getHealth()<<endl;
-    */
+
+*/
 
 
-    /*
+/*
     // creation of Object
     Hero ramesh;
     cout<<"Size of ramesh is: "<<sizeof(ramesh)<<endl;
@@ -100,7 +115,8 @@ int main(){
     cout<< "Level is: "<<ramesh.level<<endl;
 
     // cout<< "size: "<<sizeof(h1)<<endl;
-    */
+
+*/
 
 
     return 0;
