@@ -11,6 +11,7 @@ class Hero{
     public:
     char *name;
     char level;
+    static int timeToComplete;
 
     //default constructor
     Hero(){
@@ -26,11 +27,16 @@ class Hero{
     }
 
     //copy constructor
-    // Hero(Hero& temp){
-    //     cout<<"Copy Constructor called"<<endl;
-    //     this->health = temp.health;
-    //     this->level = temp.level;
-    // }
+    Hero(Hero& temp){
+
+        char *ch = new char[strlen(temp.name+1)];
+        strcpy(ch,temp.name);
+        this->name = ch;
+
+        cout<<"Copy Constructor called"<<endl;
+        this->health = temp.health;
+        this->level = temp.level;
+    }
 
     void print(){
         cout<<"[Name: "<<this->name<<",";
@@ -59,22 +65,66 @@ class Hero{
     void setName(char name[]){
         strcpy(this->name,name);
     }
+
+    static int random(){
+        return timeToComplete;
+    }
+
+    ~Hero(){
+        cout<<"Destructor Called"<<endl;
+    }
 };
+
+int Hero::timeToComplete = 5;
 
 int main(){
 
+    cout<<Hero::timeToComplete<<endl;
+
+    cout<<Hero::random()<<endl;
+
+
+
+
+/*
+    //Static
+    Hero a;
+
+
+    //Dynamically
+    Hero *b = new Hero();
+    //manually destructor call
+    delete b;
+*/
+
+}
+
+/*
     Hero hero1;
     hero1.setHealth(12);
     hero1.setLevel('D');
     char name[8] = "Prateek";
     hero1.setName(name);
 
-    hero1.print();
+    // hero1.print();
 
     //use default copy constructor
 
     Hero hero2(hero1);
+    // hero2.print();
+
+    hero1.name[0] = 'T';
+    hero1.print();
+
     hero2.print();
+
+    hero1 = hero2;
+
+    hero1.print();
+
+    hero2.print();
+
+*/
 
 /*
     Hero S(70,'C');
@@ -142,5 +192,3 @@ int main(){
 */
 
 
-    return 0;
-}
