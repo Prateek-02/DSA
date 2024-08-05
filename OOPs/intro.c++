@@ -1,4 +1,5 @@
 #include<iostream>
+#include <string.h>
 using namespace std;
 
 class Hero{
@@ -8,11 +9,13 @@ class Hero{
     int health;
 
     public:
+    char *name;
     char level;
 
     //default constructor
     Hero(){
         cout<<"Default Constructor Called"<<endl;
+        name = new char[100];
     }
 
     //Parameterized construtor
@@ -23,15 +26,17 @@ class Hero{
     }
 
     //copy constructor
-    Hero(Hero& temp){
-        cout<<"Copy Constructor called"<<endl;
-        this->health = temp.health;
-        this->level = temp.level;
-    }
+    // Hero(Hero& temp){
+    //     cout<<"Copy Constructor called"<<endl;
+    //     this->health = temp.health;
+    //     this->level = temp.level;
+    // }
 
     void print(){
-        cout<<level<<endl;
-        cout<<health<<endl;
+        cout<<"[Name: "<<this->name<<",";
+        cout<<"health: "<<this->health<<",";
+        cout<<"level: "<<this->level<<"]"<<endl;
+        cout<<endl;
     }
 
     // getters and setters
@@ -50,17 +55,35 @@ class Hero{
     void setLevel(char l){
         level = l;
     }
+
+    void setName(char name[]){
+        strcpy(this->name,name);
+    }
 };
 
 int main(){
 
+    Hero hero1;
+    hero1.setHealth(12);
+    hero1.setLevel('D');
+    char name[8] = "Prateek";
+    hero1.setName(name);
+
+    hero1.print();
+
+    //use default copy constructor
+
+    Hero hero2(hero1);
+    hero2.print();
+
+/*
     Hero S(70,'C');
     S.print();
 
     //Copy constructor
     Hero R(S);
     R.print();
-
+*/
 
 
 /*
