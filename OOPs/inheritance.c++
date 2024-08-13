@@ -4,6 +4,22 @@
     Human -> Parent class/Super class
       |
     Male  -> Child class/Sub-class
+
+    Private data memeber of any class cannot be inherited
+
+    Super class  |   Mode of inheritance  |  child class
+
+    public     ->    public         ->      public
+    public     ->    protected      ->      protected
+    public     ->    private        ->      private
+
+    protected     ->    public      ->      protected
+    protected     ->    protected   ->      protected
+    protected     ->    private     ->      private
+
+    Private       ->    public      ->      N/A(Not Accessible)       
+    Private       ->    protected   ->      N/A(Not Accessible)
+    Private       ->    private     ->      N/A(Not Accessible)
 */
 
 #include<iostream>
@@ -12,7 +28,11 @@ using namespace std;
 class Human{
     public:
     int height;
+
+    public:
     int weight;
+
+    private:
     int age;
 
     public:
@@ -25,7 +45,7 @@ class Human{
     }
 };
 
-class Male: public Human{
+class Male: /*public*/ /*protected*/ private Human{
 
     public:
     string color;
@@ -33,10 +53,24 @@ class Male: public Human{
     void sleep(){
         cout<<"Male Sleeping"<<endl;
     }
+
+    int getHeight(){
+        return this->height;
+    }
+
+    void setHeight(int h){
+        this->height = h;
+    }
 };
 
 int main(){
 
+    Male m1;
+    m1.setHeight(178);
+    cout<<m1.getHeight()<<" cm"<<endl;
+
+
+/*
     Male obj1;
     cout<< obj1.age <<endl;
     cout<< obj1.weight <<endl;
@@ -47,6 +81,6 @@ int main(){
     obj1.setWeight(85);
     cout<<obj1.weight<<endl;
     obj1.sleep();
-
+*/
     return 0;
 }
