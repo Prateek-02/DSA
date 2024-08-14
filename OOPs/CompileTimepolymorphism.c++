@@ -1,3 +1,7 @@
+// Compile Time polymorphism:- Static polymorphism.
+// Ability of a programming language to resolve a method or operator call at compile time.
+// Key features:- Function overloading, Operator overloading.
+
 #include<iostream>
 using namespace std;
 
