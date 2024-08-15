@@ -24,8 +24,11 @@ class Dog:public Animal{
 
 int main(){
 
-    Dog obj;
-    obj.speak();
+    Animal obj1;
+    obj1.speak();
+
+    Dog obj2;
+    obj2.speak();
 
     return 0;
 }
