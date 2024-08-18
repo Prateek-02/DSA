@@ -15,6 +15,7 @@ int main(){
 */
 
 
+/*
     int i = 5;
     // int *p = &i;
     int *p = 0;
@@ -23,6 +24,35 @@ int main(){
     cout<<p<<endl;
     cout<<*p<<endl;
 
+*/
+
+
+    int num = 5;
+    int a = num;
+    cout<<"Num Before: " <<num<<endl;
+    a++;
+    cout<<"Num After: "<<num<<endl;
+
+    int *p = &num;
+    cout<<"Num Before: " <<num<<endl;
+    (*p)++;  // value++;
+    cout<<"Num After: "<<num<<endl;
+
+    // copying a pointer
+    int *q = p;
+    cout<<p<<" - "<<q <<endl;
+    cout<<*p<<" - "<<*q<<endl;
+
+    // important concept
+
+    int i = 3;
+    int *t = &i;
+    // cout<<(*t)++<<endl;
+    (*t)++;
+    cout<<*t<<endl;
+    cout<< "before t "<<t<<endl;
+    t = t+1;
+    cout<<"after t "<<t<<endl;
 
 
 
