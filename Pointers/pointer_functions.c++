@@ -36,9 +36,10 @@ int main(){
     update(p);
     cout<<"After: "<< *p <<endl;
 
-    int arr[5] = {1,2,3,4,5};
+    int arr[6] = {1,2,3,4,5,6};
 
-    cout<<"Sum is: "<<getSum(arr,5)<<endl;
+    cout<<"Sum is: "<<getSum(arr,6)<<endl;
+    cout<<"Sum is: "<<getSum(arr+3,3)<<endl;
 
     return 0;
 }
