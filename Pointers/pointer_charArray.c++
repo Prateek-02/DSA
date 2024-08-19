@@ -13,6 +13,8 @@ int main(){
     char *c = &ch[0];
     //prints entire string
     cout<<c<<endl;
+    //prints 1st value
+    cout<<*c<<endl;
 
     char temp = 'z';
     char *p = &temp;
