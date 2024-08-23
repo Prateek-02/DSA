@@ -1,7 +1,9 @@
 #include<iostream>
 using namespace std;
 
-int main(){
+
+
+// int main(){
 
 /*
     int first = 8;
@@ -83,9 +85,50 @@ int main(){
     cout << *(arr) << " " << *(arr+3);   // output -> (11 14)
 */
 
+/*
+    int arr[] = {11,21,31,41};
+    int *ptr = arr++;   //error
+    cout<< *ptr << endl;   // output -> Error
+*/
 
-    
+/*
+    char ch = 'a';
+    char *ptr = &ch;
+    ch++;
+    cout<< *ptr << endl;  // output -> b
+*/
+
+/*
+    char arr[] = "abcde";
+    char *p = &arr[0];
+    cout<< p <<endl;   // output -> abcde
+*/
+
+/*
+    char arr[] = "abcde";
+    char *p = &arr[0];
+    p++;
+    cout << p << endl;   // output -> bcde
+*/
+
+/*
+    char str[] = "babbar";
+    char *p = str;
+    cout << str[0] << " " << p[0] <<endl;   // output -> (b b)
+*/
 
 
-    return 0;
+//     return 0;
+// }
+
+// functions
+
+void update( int *p){
+    *p = (*p) * 2;
+}
+
+int main(){
+    int i = 10;
+    update(&i);
+    cout<<i<<endl;   // output -> 20
 }
