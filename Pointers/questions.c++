@@ -123,12 +123,57 @@ using namespace std;
 
 // functions
 
+/*
 void update( int *p){
     *p = (*p) * 2;
+}
+
+void fun(int arr[]){
+    cout<< arr[0] << " ";   // output -> 12
 }
 
 int main(){
     int i = 10;
     update(&i);
     cout<<i<<endl;   // output -> 20
+
+    int arr[] = {11,12,13,14};
+    fun(arr+1);
+    cout<< arr[0] <<endl;  // output -> 11
+}
+*/
+
+
+// Double pointer
+
+void increment(int **p){
+    ++(**p);
+}
+
+int main(){
+
+/*
+    int first = 110;
+    int *p = &first;
+    int **q = &p;
+    int second = (**q)++ + 9;
+    cout<<first<<" "<<second<<endl;     // output -> (111 119)
+*/
+
+/*
+    int first = 100;
+    int *p = &first;
+    int **q = &p;
+    int second = ++(**q);
+    int *r = *q;
+    ++(*r);
+    cout<< first << " " << second <<endl;   // output -> (102 101)
+*/
+
+    int num = 110;
+    int *ptr = &num;
+    increment(&ptr);
+    cout<<num<<endl;   // output -> 11
+
+    return 0;
 }
