@@ -38,6 +38,7 @@ int main(){
     cout<<*p2<<endl;
 */
 
+/*
     cout<<"before "<< i << endl;
     cout<<"before "<< p << endl;
     cout<<"before "<< p2 << endl;
@@ -45,6 +46,11 @@ int main(){
     cout<<"after "<< i <<endl;
     cout<<"after "<< p <<endl;
     cout<<"after "<< p2 <<endl;
+*/
+
+
+
+
 
     return 0;
 }
