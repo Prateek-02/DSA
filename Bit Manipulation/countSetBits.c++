@@ -1,3 +1,6 @@
+// Write a program to count the number of 1's in the binary representation of an integer.
+
+
 #include<iostream>
 using namespace std;
 
