@@ -53,6 +53,10 @@ int main(){
     insertAtTail(tail,30);
     print(head);
 
+    
+    insertAtHead(head,40);
+    print(head);
+
     insertAtTail(tail,15);
     print(head);
 
