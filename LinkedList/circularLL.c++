@@ -43,10 +43,10 @@ void insertNode(Node* &tail,int element,int d){
         }
 
         // element found -> current is representing element
-
         Node* temp = new Node(d);
         temp->next = curr->next;
         curr->next = temp;
+
 
     }
 }
@@ -59,7 +59,7 @@ void deleteNode(Node* &tail, int val){
     }
     else{
         // non empty
-        //assuming that "value is present in the LL"
+        //as suming that "value is present in the LL"
 
         Node* prev = tail;
         Node* curr = prev->next;
@@ -83,9 +83,6 @@ void deleteNode(Node* &tail, int val){
 
         curr->next = NULL;
         delete curr;
-
-
-
     }
 }
 
@@ -97,13 +94,13 @@ void print(Node* &tail){
         return;
     }
 
-    do
-    {
-       cout<< tail->data<<"->";
-       tail = tail->next;
+    do{
+        cout << temp->data << "->";
+        temp = temp->next;
     } 
-    while (tail!= temp);
-    cout<<endl;
+    while (temp != tail);
+
+    cout << endl;
     
 }
 
@@ -115,20 +112,25 @@ int main(){
     //empty list me insert kr re hai
     insertNode(tail,5,3);
     print(tail);
+    cout<<"tail: "<<tail->data<<endl;
 
     insertNode(tail,3,5);
     print(tail);
+    cout<<"tail: "<<tail->data<<endl;
 
-    // insertNode(tail,5,7);
-    // print(tail);
+    insertNode(tail,5,7);
+    print(tail);
+    cout<<"tail: "<<tail->data<<endl;
 
-    // insertNode(tail,5,6);
-    // print(tail);
+    insertNode(tail,5,6);
+    print(tail);
+    cout<<"tail: "<<tail->data<<endl;
 
-    // deleteNode(tail,6);
-    // print(tail);
+    deleteNode(tail,6);
+    print(tail);
+    cout<<"tail: "<<tail->data<<endl;
 
-    deleteNode(tail,3);
+    insertNode(tail,3,1);
     print(tail);
 
 
