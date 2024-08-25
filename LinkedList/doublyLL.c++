@@ -12,6 +12,15 @@ class Node{
         this->prev = NULL;
         this->next = NULL;
     }
+
+    ~Node(){
+        int val = this->data;
+        if(next != NULL){
+            delete next;
+            next = NULL;
+        }
+        cout<<"Memeory free for node with data: "<<val<<endl;
+    }
 };
 
 // Traverse a LL
@@ -94,8 +103,44 @@ void insertAtPosition(Node* &head,Node* &tail, int d, int pos){
     nodeToInsert->prev = temp;
     temp->next->prev = nodeToInsert;
     temp->next = nodeToInsert;
-   
 
+}
+
+void deleteNode(int position, Node* &head, Node* &tail){
+
+    //deleting first or start node
+    if(position == 1){
+        Node* temp = head;
+        temp->next->prev = NULL;
+        head = temp->next;
+        temp->next = NULL;
+
+        delete temp;
+    }
+
+
+    else{
+        // deleting any middle or last node
+        Node* curr = head;
+        Node* prev = NULL;
+
+        int cnt = 1;
+        while(cnt < position){
+            prev = curr;
+            curr = curr->next;
+            cnt++;
+        }
+
+        if (curr->next == NULL) {
+            tail = prev;
+        }
+
+        curr->prev = NULL;
+        prev->next = curr->next;
+        curr->next = NULL;
+        delete curr;
+
+    }
 }
 
 int main(){
@@ -141,7 +186,20 @@ int main(){
     print(head);   
     cout<<"Length of Linked List: "<<getLength(head)<<endl;
     cout<<"Head: "<<head->data<<endl;
-    cout<<"Tail: "<<tail->data<<endl;
+    cout<<"Tail: "<<tail->data<<endl<<endl;
+
+
+    deleteNode(1,head,tail);
+    print(head);
+    cout<<"Length of Linked List: "<<getLength(head)<<endl;
+    cout<<"Head: "<<head->data<<endl;
+    cout<<"Tail: "<<tail->data<<endl<<endl;
+
+    deleteNode(5,head,tail);
+    print(head);
+    cout<<"Length of Linked List: "<<getLength(head)<<endl;
+    cout<<"Head: "<<head->data<<endl;
+    cout<<"Tail: "<<tail->data<<endl<<endl;
 
 
 
