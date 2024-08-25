@@ -58,7 +58,8 @@ void print(Node* &tail){
     {
        cout<< tail->data<<"->";
        tail = tail->next;
-    } while (tail!= temp);
+    } 
+    while (tail!= temp);
     cout<<endl;
     
 }
