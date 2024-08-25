@@ -51,6 +51,37 @@ void insertNode(Node* &tail,int element,int d){
     }
 }
 
+void deleteNode(Node* &tail, int val){
+
+    //empty list
+    if(tail == NULL){
+        cout<<"List is empty please check again"<<endl;
+    }
+    else{
+        // non empty
+        //assuming that "value is present in the LL"
+
+        Node* prev = tail;
+        Node* curr = prev->next;
+
+        while(curr->data != val){
+            prev = curr;
+            curr = curr->next;
+        }
+
+        prev->next = curr->next;
+        if(tail == curr){
+            tail = prev;
+        }
+
+        curr->next = NULL;
+        delete curr;
+
+
+
+    }
+}
+
 void print(Node* &tail){
     Node* temp = tail;
 
@@ -63,7 +94,6 @@ void print(Node* &tail){
     cout<<endl;
     
 }
-
 
 
 int main(){
@@ -81,6 +111,9 @@ int main(){
     print(tail);
 
     insertNode(tail,5,6);
+    print(tail);
+
+    deleteNode(tail,3);
     print(tail);
 
 
