@@ -37,15 +37,14 @@ int getLength(Node* &head){
 
 void insertAtHead(Node* &head,Node* &tail,int d){
 
+    Node* temp = new Node(d);
     // empty list
     if(head == NULL){
-        Node* temp = new Node(d);
         head = temp;
         tail = temp;
     }
 
     else{
-        Node* temp = new Node(d);
         temp->next = head;
         head->prev = temp;
         head = temp;
@@ -57,13 +56,12 @@ void insertAtHead(Node* &head,Node* &tail,int d){
 void insertAtTail(Node* &tail,Node* &head, int d){
 
     // empty list
+    Node* temp = new Node(d);
     if(tail == NULL){
-        Node* temp = new Node(d);
         tail = temp;
         head = temp;
     }
     else{
-        Node* temp = new Node(d);
         tail->next = temp;
         temp->prev = tail;
         tail = temp;
@@ -107,37 +105,37 @@ int main(){
     Node* tail = NULL;
 
     print(head);
-    cout<<"Length of Linked List: "<<getLength(head)<<endl;
+    cout<<"Length of Linked List: "<<getLength(head)<<endl<<endl;
 
     insertAtHead(head,tail,11);
     print(head);  
     cout<<"Length of Linked List: "<<getLength(head)<<endl;
     cout<<"Head: "<<head->data<<endl;
-    cout<<"Tail: "<<tail->data<<endl;
+    cout<<"Tail: "<<tail->data<<endl<<endl;
 
     insertAtHead(head,tail,13);
     print(head); 
     cout<<"Length of Linked List: "<<getLength(head)<<endl;
     cout<<"Head: "<<head->data<<endl;
-    cout<<"Tail: "<<tail->data<<endl;
+    cout<<"Tail: "<<tail->data<<endl<<endl;
 
     insertAtHead(head,tail,15);
     print(head);   
     cout<<"Length of Linked List: "<<getLength(head)<<endl;
     cout<<"Head: "<<head->data<<endl;
-    cout<<"Tail: "<<tail->data<<endl;
+    cout<<"Tail: "<<tail->data<<endl<<endl;
 
     insertAtTail(tail,head,20);
     print(head);   
     cout<<"Length of Linked List: "<<getLength(head)<<endl;
     cout<<"Head: "<<head->data<<endl;
-    cout<<"Tail: "<<tail->data<<endl;
+    cout<<"Tail: "<<tail->data<<endl<<endl;
 
     insertAtPosition(head,tail,30,4);
     print(head);   
     cout<<"Length of Linked List: "<<getLength(head)<<endl;
     cout<<"Head: "<<head->data<<endl;
-    cout<<"Tail: "<<tail->data<<endl;
+    cout<<"Tail: "<<tail->data<<endl<<endl;
 
     insertAtPosition(head,tail,50,6);
     print(head);   
