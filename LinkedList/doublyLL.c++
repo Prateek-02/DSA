@@ -15,9 +15,9 @@ class Node{
 
     ~Node(){
         int val = this->data;
-        if(next != NULL){
+        if(this->next != NULL){
             delete next;
-            next = NULL;
+            this->next = NULL;
         }
         cout<<"Memeory free for node with data: "<<val<<endl;
     }
