@@ -21,7 +21,7 @@ void print(Node* &head){
         cout<<temp->data<<"->";
         temp = temp->next;
     }
-    cout<<endl;
+    cout<<"NULL"<<endl;
 }
 
 // Length of LL
@@ -43,13 +43,17 @@ void insertAtHead(Node* &head,int d){
 }
 
 void insertAtTail(Node* &tail, int d){
-
+    Node* temp = new Node(d);
+    tail->next = temp;
+    temp->prev = tail;
+    tail = temp;
 }
 
 int main(){
 
     Node* node1 = new Node(10);
     Node* head = node1;
+    Node* tail = node1;
 
     print(head);
     cout<<"Length of Linked List: "<<getLength(head)<<endl;
@@ -66,5 +70,11 @@ int main(){
     print(head);   
     cout<<"Length of Linked List: "<<getLength(head)<<endl;
 
+    insertAtTail(tail,20);
+    print(head);   
+    cout<<"Length of Linked List: "<<getLength(head)<<endl;
+
+
+    
     return 0;
 }
