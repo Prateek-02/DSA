@@ -54,6 +54,7 @@ void insertAtPosition(Node* &head,Node* &tail, int d, int pos){
     // insert at head
     if(pos==1){
         insertAtHead(head,d);
+        return;
     }
 
     int cnt = 1;
@@ -66,12 +67,15 @@ void insertAtPosition(Node* &head,Node* &tail, int d, int pos){
     // insert at last position
     if(temp->next == NULL){
         insertAtTail(tail,d);
+        return;
     }
 
     Node* nodeToInsert = new Node(d);
     nodeToInsert->next = temp->next;
     nodeToInsert->prev = temp;
+    temp->next->prev = nodeToInsert;
     temp->next = nodeToInsert;
+   
 
 }
 
