@@ -1,3 +1,8 @@
+// You are given two non-negative integers, ‘NUM1’ and ‘NUM2’, in the form of strings. 
+// Return the sum of both strings.
+
+
+
 #include<iostream>
 using namespace std;
 
