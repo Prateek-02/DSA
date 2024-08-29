@@ -126,12 +126,12 @@ bool detectLoop(Node* head){
 
     return false;
 }
-// checing if a loop exists in list
 
-bool floydDetectLoop(Node* head){
+// checing if a loop exists in list
+Node* floydDetectLoop(Node* head){
 
     if(head == NULL){
-        return false;
+        return NULL;
     }
 
     Node* slow = head;
@@ -145,10 +145,30 @@ bool floydDetectLoop(Node* head){
         slow = slow->next;
 
         if(slow == fast){
-            return true;
+            cout<<"Present at: "<<slow->data<<endl;
+            return slow;
         }
     }
-    return false;
+    return NULL;
+}
+
+// getting the start of loop
+
+Node* getStartingNode(Node* head){
+    if(head == NULL){
+        return NULL;
+    }
+
+    Node* intersection = floydDetectLoop(head);
+
+    Node* slow = head;
+
+    while(slow!=intersection){
+        slow = slow->next;
+        intersection = intersection->next;
+    }
+
+    return slow;
 }
 
 void print(Node* &head){
@@ -199,12 +219,13 @@ int main(){
 
     tail->next = head->next;
 
-    if(floydDetectLoop(head)){
+    if(floydDetectLoop(head) != NULL){
         cout<<"Cycle is present"<<endl;
     }
     else{
         cout<<"No cycle"<<endl;
     }
 
+    cout<<"Starting at: "<<getStartingNode(head) -> data <<endl;
     return 0;
 }
