@@ -207,54 +207,23 @@ int main(){
     // head pointed to node1
     Node* head = node1;
     Node* tail = node1;
-    // print(head);
+    print(head);
 
 
-    insertAtTail(tail,30);
-    // print(head);
+    insertAtTail(tail,30);  
+    insertAtHead(head,40);
+    insertAtTail(tail,15);
+    inserAtPosition(head,tail,5,50);
+
+    cout<<"Head "<<head->data<<endl;
+    cout<<"Tail "<<tail->data<<endl;
+
+    deleteNode(5,head,tail);
+    print(head);
+
+    cout<<"Head "<<head->data<<endl;
+    cout<<"Tail "<<tail->data<<endl;
 
     
-    insertAtHead(head,40);
-    // print(head);
-
-
-    insertAtTail(tail,15);
-    // print(head);
-
-    inserAtPosition(head,tail,5,50);
-    print(head);
-
-    cout<<"Head "<<head->data<<endl;
-    cout<<"Tail "<<tail->data<<endl;
-
-    // deleteNode(5,head,tail);
-    // print(head);
-
-    // cout<<"Head "<<head->data<<endl;
-    // cout<<"Tail "<<tail->data<<endl;
-
-    tail->next = head->next;
-
-    if(floydDetectLoop(head) != NULL){
-        cout<<"Cycle is present"<<endl;
-    }
-    else{
-        cout<<"No cycle"<<endl;
-    }
-
-    cout<<"Starting at: "<<getStartingNode(head) -> data <<endl;
-
-    removeLoop(head);
-    if(floydDetectLoop(head) != NULL){
-        cout<<"Cycle is present"<<endl;
-    }
-    else{
-        cout<<"No cycle"<<endl;
-    }
-    print(head);
-    cout<<"Head "<<head->data<<endl;
-    cout<<"Tail "<<tail->data<<endl;
-
-
     return 0;
 }
