@@ -101,91 +101,6 @@ void deleteNode(int position, Node* &head, Node* &tail){
     }
 }
 
-// checing if a loop exists in list
-bool detectLoop(Node* head){
-
-    if(head == NULL){
-        return false;
-    }
-
-    map<Node*, bool> visited;
-
-    Node* temp = head;
-
-    while(temp!=NULL){
-
-        //cycle is present
-        if(visited[temp] == true){
-            cout<<"Present at: " << temp->data<<endl;
-            return true;
-        }
-
-        visited[temp] = true;
-        temp = temp->next;
-    }
-
-    return false;
-}
-
-// checing if a loop exists in list
-Node* floydDetectLoop(Node* head){
-
-    if(head == NULL){
-        return NULL;
-    }
-
-    Node* slow = head;
-    Node* fast = head;
-
-    while(slow != NULL && fast != NULL){
-        fast = fast->next;
-        if(fast != NULL){
-            fast=fast->next;
-        }
-        slow = slow->next;
-
-        if(slow == fast){
-            cout<<"Present at: "<<slow->data<<endl;
-            return slow;
-        }
-    }
-    return NULL;
-}
-
-// getting the start of loop
-
-Node* getStartingNode(Node* head){
-    if(head == NULL){
-        return NULL;
-    }
-
-    Node* intersection = floydDetectLoop(head);
-
-    Node* slow = head;
-
-    while(slow!=intersection){
-        slow = slow->next;
-        intersection = intersection->next;
-    }
-
-    return slow;
-}
-
-void removeLoop(Node* head){
-    if(head == NULL){
-        return;
-    }
-
-    Node* startOfLoop = getStartingNode(head);
-
-    Node* temp = startOfLoop;
-    while(temp->next != startOfLoop){
-        temp = temp->next;
-    }
-
-    temp->next = NULL;
-}
-
 
 void print(Node* &head){
     Node* temp = head;
@@ -209,7 +124,7 @@ int main(){
     Node* tail = node1;
     print(head);
 
-
+    insertAtHead(head,100);
     insertAtTail(tail,30);  
     insertAtHead(head,40);
     insertAtTail(tail,15);
