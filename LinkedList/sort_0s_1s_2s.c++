@@ -31,11 +31,7 @@ void insertAtTail(Node* &tail,int d){
     tail = temp;
 }
 
-// inserting at tail in every sub list
-void insertAtTailNode(Node* &tail, Node* &curr){
-    tail->next = curr;
-    tail = curr;
-}
+
 
 // sortinng elements
 //1
@@ -86,6 +82,12 @@ Node* sortList(Node* &head){
         temp = temp->next;
     }
     return head;
+}
+
+// inserting at tail in every sub list
+void insertAtTailNode(Node* &tail, Node* &curr){
+    tail->next = curr;
+    tail = curr;
 }
 
 //2 
