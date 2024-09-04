@@ -31,7 +31,14 @@ void insertAtTail(Node* &tail,int d){
     tail = temp;
 }
 
+// inserting at tail in every sub list
+void insertAtTailNode(Node* &tail, Node* &curr){
+    tail->next = curr;
+    tail = curr;
+}
+
 // sortinng elements
+//1
 Node* sortList(Node* &head){
 
     if(head == NULL){
@@ -81,6 +88,58 @@ Node* sortList(Node* &head){
     return head;
 }
 
+//2 
+Node* sortList2(Node* &head){
+
+    if(head == NULL){
+        return NULL;
+    }
+
+    Node* zeroHead = new Node(-1);
+    Node* zeroTail = zeroHead;
+    Node* oneHead = new Node(-1);
+    Node* oneTail = oneHead;
+    Node* twoHead = new Node(-1);
+    Node* twoTail = twoHead;
+
+    Node* curr = head;
+
+    while(curr != NULL){
+        int val = curr->data;
+
+        if(val == 0){
+            insertAtTailNode(zeroTail,curr);
+        }
+        else if(val == 1){
+            insertAtTailNode(oneTail,curr);
+        }
+        else{
+            insertAtTailNode(twoTail,curr);
+        }
+
+        curr = curr->next;
+    }
+
+    // merge 3 sublist
+    if(oneHead -> next != NULL){
+        zeroTail->next = oneHead->next;
+    }
+    else{
+        zeroTail->next = twoHead->next;
+    }
+
+    oneTail->next = twoHead->next;
+    twoTail->next = NULL;
+
+    head = zeroHead->next;
+
+    delete zeroHead;
+    delete oneHead;
+    delete twoHead;
+
+    return head;
+}
+
 
 void print(Node* &head){
     Node* temp = head;
@@ -114,6 +173,8 @@ int main(){
     //printing list
     print(head);
 
+    sortList2(head);
+    print(head);
 
     return 0;
 }
