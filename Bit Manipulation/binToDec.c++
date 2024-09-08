@@ -6,10 +6,9 @@ int binToDec(int n){
 
     while(n!=0){
         int rem = n%10;
-        n/=10;
-        
         ans = rem*pow;
         pow *= 2;
+        n/=10;
     }
     return ans;
 }
