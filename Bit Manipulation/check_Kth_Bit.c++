@@ -5,7 +5,7 @@ using namespace std;
 
 bool isKthBitSet(int n, int k){
     int mask = 1;
-    mask = (mask<<k-1);
+    mask = (mask<<k);
 
     int ans = (n&mask);
 
