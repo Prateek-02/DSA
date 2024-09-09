@@ -1,5 +1,3 @@
-// Given a number ‘N’ and a number ‘K’. Return true if ‘K’th bit of number is set, else return false.
-
 #include<iostream>
 using namespace std;
 
