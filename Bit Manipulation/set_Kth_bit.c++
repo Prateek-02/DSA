@@ -5,7 +5,7 @@ using namespace std;
 
 int SetKthBit(int n,int k){
     int mask = 1;
-    mask = (mask<<2);
+    mask = (mask<<k);
 
     int ans = (n|mask);
 
@@ -24,7 +24,7 @@ int main(){
     cout<<"Enter the position of bit: ";
     cin>>k;
 
-    cout<<SetKthBit(n,k);
+    cout<<"Number after setting kth bit: "<<SetKthBit(n,k);
 
     return 0;
 }
