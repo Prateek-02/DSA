@@ -38,7 +38,7 @@ void insertNode(Node* &tail,int element,int d){
 
         Node* curr = tail;
 
-        while(curr->data!=element){
+        while(curr->data != element){
             curr = curr->next;
         }
 
