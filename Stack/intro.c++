@@ -16,10 +16,12 @@ int main(){
 
     cout<<"Printing top element " << s.top()<<endl;
     if(s.empty()){
-        cout<<"Stack is empty";
+        cout<<"Stack is empty"<<endl;
     }
     else{
-        cout<<"Stack is not empty";
+        cout<<"Stack is not empty"<<endl;
     }
+
+    cout<<"size of stack is "<<s.size()<<endl;
     return 0;
 }
