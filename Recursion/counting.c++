@@ -7,10 +7,12 @@ void print(int n){
         return;
     }
 
+    // print(n-1); // 1 To 5 
+
     cout<<n<<endl;
 
     // recursive call
-    print(n-1);
+    print(n-1); // 5 to 1
 }
 
 int main(){
