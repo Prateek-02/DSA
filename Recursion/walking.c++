@@ -3,6 +3,8 @@ using namespace std;
 
 void reachHome(int dest,int src){
 
+    cout<<"Source: "<<src<<" Dest: "<<dest<<endl;
+
     // base case
     if(src == dest){
         cout<<"Pahuch gayga"<<endl;
