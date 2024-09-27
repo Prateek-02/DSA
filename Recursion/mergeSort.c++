@@ -51,6 +51,9 @@ void merge(int *arr,int s,int e){
         index2++;
     }
 
+    delete[] first;
+    delete[] second;
+
 }
 
 void mergeSort(int *arr,int s,int e){
