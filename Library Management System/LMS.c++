@@ -10,7 +10,12 @@ public:
     string author;
     bool isIssued;
 
-    Book(int id, string title, string author) : id(id), title(title), author(author), isIssued(false) {}
+    Book(int id, string title, string author) {
+    this->id = id;
+    this->title = title;
+    this->author = author;
+    this->isIssued = false;
+    }
 
     void display() const {
         cout << "ID: " << id << ", Title: " << title << ", Author: " << author << ", " 
