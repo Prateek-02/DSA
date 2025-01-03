@@ -14,17 +14,17 @@ int main(){
     }
 
     //pre-compute
-    map<int,int> mp;
+    unordered_map<int,int> mp;
     for(int i=0;i<n;i++){
         mp[arr[i]]++;
     }
 
     // iterate in the map
-    /*
+    
     for(auto it:mp){
         cout<<it.first<< "->" << it.second <<endl;
     }
-    */
+    
 
     int q;
     cin>>q;
@@ -39,4 +39,4 @@ int main(){
     }
 }
 
-// time complexity :- storing and fetching - O(log N) in all the cases
+// time complexity :- storing and fetching - O(1) (Average and best case), O(N) ( Worst case) 
