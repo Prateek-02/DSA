@@ -1,3 +1,5 @@
+// it stores all the values in sorted order
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -17,6 +19,13 @@ int main(){
         mp[arr[i]]++;
     }
 
+    // iterate in the map
+    /*
+    for(auto it:mp){
+        cout<<it.first<< "->" << it.second <<endl;
+    }
+    */
+   
     int q;
     cin>>q;
 
