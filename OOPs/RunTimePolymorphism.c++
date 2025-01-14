@@ -1,4 +1,4 @@
-// Compile Time polymorphism:- Dynamic polymorphism.
+// Run Time polymorphism:- Dynamic polymorphism.
 // Ability of a programming language to resolve a method or operator call at run time.
 // Key features:- Function overriding.(Function should have same name as well as same arguments)
 // It is possible only through inheritance.
