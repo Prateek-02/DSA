@@ -3,7 +3,7 @@
 using namespace std;
 
 string remove_subs(string str, string part){
-    while(str.length() != 0 && str.find(part) < str.length() ){
+    while(str.length() > 0 && str.find(part) < str.length() ){
         str.erase(str.find(part),part.length());
     }
     return str;
