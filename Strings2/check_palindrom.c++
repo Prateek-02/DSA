@@ -15,11 +15,11 @@ int main(){
     int st = 0,end = s.length()-1;
 
     while(st<end){
-        if(!isAlphaNum(s[st])){
-            st++;
+        if(!isAlphaNum(s[st])){    // or we can use isalnum() inbuilt function to check if the character is alphaNumeric or not
+            st++;                  // if(!isalnum(s[st])){ st++; continue;}
             continue;
         }
-        if(!isAlphaNum(s[end])){
+        if(!isAlphaNum(s[end])){     // if(!isalnum(s[end])){ end--; continue;}
             end--;
             continue;
         }
