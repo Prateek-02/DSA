@@ -89,6 +89,18 @@ void preorder(node* root){
     preorder(root->right);
 }
 
+void postorder(node* root){
+    //base case
+    if(!root){
+        return;
+    }
+
+    //recursive case
+    postorder(root->left);
+    postorder(root->right);
+    cout<<root->data<<" ";
+}
+
 int main(){
     node* root = NULL;
 
@@ -107,7 +119,10 @@ int main(){
     cout<<"Preorder traversal is: ";
     preorder(root);
 
-    
+    cout<<endl;
+
+    cout<<"Postorder traversal is: ";
+    postorder(root);
 
     return 0;
 }
