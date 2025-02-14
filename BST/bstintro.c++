@@ -100,6 +100,25 @@ Node* insertIntoBST(Node* root, int d){
     
 }
 
+//find minimum value in BST
+Node* minVal(Node* root){
+    Node* temp = root;
+    while(temp->left){
+        temp = temp->left;
+    }
+    return temp;
+}
+
+//find maximum value in BST
+Node* maxVal(Node* root){
+    Node* temp = root;
+    while(temp->right){
+        temp = temp->right;
+    }
+    return temp;
+}
+
+
 void takeInput(Node* &root){
     int data;
     cin>>data;
@@ -130,6 +149,10 @@ int main(){
 
     cout<<"Printing Postorder: ";
     postorder(root);
+    cout<<endl;
+
+    cout<<"Min value is: "<<minVal(root)->data<<endl;
+    cout<<"Max value is: "<<maxVal(root)->data<<endl;
 
     return 0;
 }
