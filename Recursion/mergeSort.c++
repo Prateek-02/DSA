@@ -1,6 +1,7 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
+/*
 void merge(int *arr,int s,int e){
     int mid = s+(e-s)/2;
 
@@ -53,6 +54,47 @@ void merge(int *arr,int s,int e){
 
     delete[] first;
     delete[] second;
+
+}
+*/
+
+void merge(int* arr,int s,int e){
+    int mid = s+(e-s)/2;
+    int i=s;
+    int j=mid+1;
+
+    int n = (e-s+1);
+    vector<int> temp(n);
+    int k=0;
+
+    while(i<=mid && j<=e){
+        if(arr[i] < arr[j]){
+            temp[k] = arr[i];
+            i++;
+            k++;
+        }
+        else{
+            temp[k] = arr[j];
+            j++;
+            k++;
+        }
+    }
+
+    while(i<=mid){
+        temp[k] = arr[i];
+        i++;
+        k++;
+    }
+
+    while(j<=e){
+        temp[k] = arr[j];
+        j++;
+        k++;
+    }
+
+    for(int i=0;i<temp.size();i++){
+        arr[s+i] = temp[i];
+    }
 
 }
 

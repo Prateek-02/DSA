@@ -118,6 +118,56 @@ Node* maxVal(Node* root){
     return temp;
 }
 
+Node* deleteFromBST(Node* root,int val){
+    //base case
+    if(!root){
+        return root;
+    }
+
+    if(root->data == val){
+        //0 child
+        if(!root->left && !root->right){
+            delete root;
+            return NULL;
+        }
+
+
+        //1 child
+
+        //left child
+        if(root->left && !root->right){
+            Node* temp = root->left;
+            delete root;
+            return temp;
+        }
+
+        //right child
+        if(!root->left && root->right){
+            Node* temp = root->right;
+            delete root;
+            return temp;
+        }
+
+
+        //2 child
+        if(root->left && root->right){
+            int mini = minVal(root->right) -> data;
+            root->data = mini;
+            root->right = deleteFromBST(root->right,min);
+            return root;
+        }
+    }
+    else if(root->data > val){
+        //left part me jaao
+        root->left = deleteFromBST(root->left,val);
+        return root;
+    }
+    else{
+        //right part me jaao
+        root->right = deleteFromBST(root->right,val);
+        return root;
+    }
+}
 
 void takeInput(Node* &root){
     int data;
@@ -129,6 +179,8 @@ void takeInput(Node* &root){
     }
 
 }
+
+
 
 int main(){
     Node* root = NULL;
