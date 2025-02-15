@@ -153,7 +153,7 @@ Node* deleteFromBST(Node* root,int val){
         if(root->left && root->right){
             int mini = minVal(root->right) -> data;
             root->data = mini;
-            root->right = deleteFromBST(root->right,min);
+            root->right = deleteFromBST(root->right,mini);
             return root;
         }
     }
@@ -187,6 +187,26 @@ int main(){
 
     cout<<"Enter data to create BST" << endl;
     takeInput(root);
+
+    cout<<"Printing the BST: "<<endl;
+    levelOrderTraversal(root);
+
+    cout<<"Printing Inorder: ";
+    inorder(root);
+    cout<<endl;
+
+    cout<<"Printing Preorder: ";
+    preorder(root);
+    cout<<endl;
+
+    cout<<"Printing Postorder: ";
+    postorder(root);
+    cout<<endl;
+
+    cout<<"Min value is: "<<minVal(root)->data<<endl;
+    cout<<"Max value is: "<<maxVal(root)->data<<endl;
+
+    root = deleteFromBST(root,50);
 
     cout<<"Printing the BST: "<<endl;
     levelOrderTraversal(root);
