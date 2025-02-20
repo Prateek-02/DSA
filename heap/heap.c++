@@ -130,7 +130,6 @@ int main(){
     }
     cout<<endl;
 
-
     //heapSort
     heapSort(arr,n);
     cout<<"Printing sorted array "<<endl;
