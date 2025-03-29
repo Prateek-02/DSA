@@ -70,7 +70,7 @@ int main(){
     g.addEdge(3,4,-1);
     g.addEdge(4,5,-2);
 
-    g.printAdj();
+    // g.printAdj();
 
     int n = 6;
     //topological sort
