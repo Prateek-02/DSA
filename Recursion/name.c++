@@ -2,6 +2,7 @@
 using namespace std;
 
 void printName(int i,int &n){
+    //base case
     if(i > n){
         return;
     }
